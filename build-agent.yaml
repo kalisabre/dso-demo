@@ -30,8 +30,8 @@ spec:
     - sleep args:
       - 99d
     volumeMounts:
-      - name: jenkins-docker-cfg
-        mountPath: /kaniko/.docker
+    - name: jenkins-docker-cfg
+      mountPath: /kaniko/.docker
     - name: trufflehog
       image: rmkanda/trufflehog
       command:
