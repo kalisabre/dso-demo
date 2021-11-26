@@ -33,7 +33,7 @@ Sample spring application with Jenkins pipeline script to demonstrate secure pip
     kubectl exec --namespace default -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
   ```
 
-  **Note:** Make a note of the password
+  ***Note:*** Make a note of the password
 
 - [Optional] Forward Jenkins server port to access from local machine
 
