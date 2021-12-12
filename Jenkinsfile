@@ -142,7 +142,12 @@ pipeline {
         stage('DAST') {
           steps {
             container('docker-tools') {
-              sh 'docker run -v $(pwd)/reports:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL -r zapreport.html || exit 0'
+              sh 'docker run -v $(pwd)/reports/:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL -r zapreport.html || exit 0'
+            }
+          }
+          post {
+            success {
+              archiveArtifacts allowEmptyArchive: true, artifacts: 'reports/*', fingerprint: true, onlyIfSuccessful:true
             }
           }
         }
