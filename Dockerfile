@@ -12,7 +12,7 @@ ENV HOME /home/$USER
 RUN adduser -D $USER && chown $USER:$USER /run/demo.jar 
 
 # HEALTH check
-RUN apk add curl
+RUN apk add --no-cache curl
 HEALTHCHECK --interval=30s --timeout=10s --retries=2 --start-period=20s CMD curl -f http://localhost:8080/ || exit 1
 
 USER $USER
