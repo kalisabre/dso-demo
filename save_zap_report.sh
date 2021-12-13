@@ -11,7 +11,7 @@ mkdir -p $PWD/out
 echo DEBUG - chmod 777 $PWD/out
 chmod 777 $PWD/out
 
-docker run -v $(pwd)/out:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL -r zap_scan_report.html
+docker run -v $(pwd)/out:/zap/wrk/:rw -t owasp/zap2docker-stable:latest zap-baseline.py -t $DEV_URL -r zap_scan_report.html
 
 echo DEBUG - Finding all files in workspace
 find $PWD
