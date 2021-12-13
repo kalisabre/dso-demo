@@ -20,13 +20,13 @@ echo DEBUG - Finding all files in workspace
 find $PWD
 
 
-# sudo docker cp $(sudo docker ps -l -q):/home/zap/.ZAP_D/zap.log ${WORKSPACE}
+sudo docker cp $(sudo docker ps -l -q):/home/zap/.ZAP_D/zap.log ${WORKSPACE}
 # the goal is to get the following to work, 
 # copying the zap_scan_report.html from the Docker container 
 # to the Jenkins workspace, as a start:
-# sudo docker cp \ 
-#   $(docker ps -l -q):/home/zap/.ZAP_D/zap_scan_report.html \
-#   ${WORKSPACE}/zap_scan_report.html
+sudo docker cp \ 
+  $(docker ps -l -q):/home/zap/.ZAP_D/zap_scan_report.html \
+  ${WORKSPACE}/zap_scan_report.html
 
 if test -f ${PWD}/out/zap_scan_report.html; then
   mv ${PWD}/out/zap_scan_report.html ${PWD}
