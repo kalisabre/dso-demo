@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# https://gist.github.com/stephendonner/80f7bee6366b2eb151a1ed47c4dfe129
 docker rm $(docker ps -a -f status=exited -q)
 # docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 
