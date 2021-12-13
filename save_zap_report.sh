@@ -13,7 +13,7 @@ chmod 777 $PWD/out
 ls -al
 
 docker run -v $(pwd)/out:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL -r zap_scan_report.html
-
+echo $PWD
 ls -al
 
 echo DEBUG - Finding all files in workspace
