@@ -146,11 +146,6 @@ pipeline {
               sh './save_zap_report.sh'
             }
           }
-          post {
-            success {
-              archiveArtifacts allowEmptyArchive: true, artifacts: 'reports/*', fingerprint: true, onlyIfSuccessful:true
-            }
-          }
         }
       }
     }
