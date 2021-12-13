@@ -103,24 +103,24 @@ pipeline {
         }
       }
     }
-    stage('Image Analysis') {
-      parallel {
-        stage('Image Linting') {
-          steps {
-            container('docker-tools') {
-              sh 'dockle docker.io/sabre1409/dsodemo'
-            }
-          }
-        }
-        stage('Image Scan') {
-          steps {
-            container('docker-tools') {
-              sh 'trivy image --exit-code 1 sabre1409/dsodemo'
-            }
-          }
-        }
-      }
-    }
+    // stage('Image Analysis') {
+    //   parallel {
+    //     stage('Image Linting') {
+    //       steps {
+    //         container('docker-tools') {
+    //           sh 'dockle docker.io/sabre1409/dsodemo'
+    //         }
+    //       }
+    //     }
+    //     stage('Image Scan') {
+    //       steps {
+    //         container('docker-tools') {
+    //           sh 'trivy image --exit-code 1 sabre1409/dsodemo'
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     stage('Deploy to Dev') {
       environment {
         AUTH_TOKEN = credentials('argocd-jenkins-deployer-token')
