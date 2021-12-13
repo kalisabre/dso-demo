@@ -10,9 +10,9 @@ mkdir -p $PWD/out
 
 echo DEBUG - chmod 777 $PWD/out
 chmod -R 777 $PWD/out
-
+whoami
 docker run -v $(pwd)/out:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL -r zap_scan_report.html
-
+whoami
 echo DEBUG - Finding all files in workspace
 find $PWD
 
