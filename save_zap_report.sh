@@ -3,7 +3,7 @@
 docker rm $(docker ps -a -f status=exited -q)
 # docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 
-docker pull owasp/zap2docker-live
+docker pull owasp/zap2docker-stable
 
 echo DEBUG - mkdir -p $PWD/out
 mkdir -p $PWD/out
