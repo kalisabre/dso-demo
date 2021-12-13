@@ -142,11 +142,8 @@ pipeline {
         stage('DAST') {
           steps {
             container('docker-tools') {
-              sh 'ls -al ${pwd}'
               sh 'chmod +x ./save_zap_report.sh'
               sh './save_zap_report.sh'
-              sh 'docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t $DEV_URL -r zapreport.html || exit 0'
-              sh 'ls ${pwd}'
             }
           }
           post {
