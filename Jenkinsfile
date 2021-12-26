@@ -123,6 +123,7 @@ pipeline {
     }
     stage('Scan k8s Deploy Code') {
       steps {
+        // Use Checkov instead more up to date than kubesec
         container('docker-tools') {
               sh 'kubesec scan deploy/dso-demo-deploy.yaml'
         }
