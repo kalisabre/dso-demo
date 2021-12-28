@@ -48,6 +48,6 @@ spec:
           - name: tmp
             mountPath: /tmp
       volumes:
-        name: tmp
-        emptyDir: {}
+        - name: tmp
+          emptyDir: {}
 status: {}
