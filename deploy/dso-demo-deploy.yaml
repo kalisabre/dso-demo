@@ -5,7 +5,7 @@ metadata:
   labels:
     app: dso-demo
   name: dso-demo
-  annotation:
+  annotations:
     seccomp.security.alpha.kubernetes.io/pods: "runtime/default" 
 spec:
   replicas: 1
@@ -19,7 +19,7 @@ spec:
       labels:
         app: dso-demo
     spec:
-      automountServiceAccountToken: false
+      # automountServiceAccountToken: false
       serviceAccountName: dso-demo
       containers:
       - image: sabre1409/dsodemo
