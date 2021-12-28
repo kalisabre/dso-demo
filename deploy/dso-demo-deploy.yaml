@@ -34,7 +34,7 @@ spec:
               - ALL
           privileged: false
           allowPrivilegeEscalation: false
-          # readOnlyRootFilesystem: true
+          readOnlyRootFilesystem: true
           runAsNonRoot: true
           # Should be set very high to make sure id is not the same as process on host
           runAsUser: 11000
