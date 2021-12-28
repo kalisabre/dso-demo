@@ -30,8 +30,8 @@ spec:
           # seccompProfile:
           #   type: RuntimeDefault
           capabilities:
-          drop: 
-            - ALL
+            drop: 
+              - ALL
           privileged: false
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
