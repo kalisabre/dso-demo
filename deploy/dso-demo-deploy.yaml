@@ -36,7 +36,8 @@ spec:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
           runAsNonRoot: true
-          runAsUser: 11000
+          # Should be set very high to make sure id is not the same as process on host
+          runAsUser: 1000
         resources:
          requests:
           cpu: "50m"
