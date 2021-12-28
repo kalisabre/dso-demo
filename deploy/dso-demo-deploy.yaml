@@ -34,10 +34,10 @@ spec:
               - ALL
           privileged: false
           allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: true
+          # readOnlyRootFilesystem: true
           runAsNonRoot: true
           # Should be set very high to make sure id is not the same as process on host
-          runAsUser: 1000
+          runAsUser: 11000
         resources:
          requests:
           cpu: "50m"
