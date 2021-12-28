@@ -20,6 +20,7 @@ spec:
         app: dso-demo
     spec:
       automountServiceAccountToken: false
+      serviceAccountName: dso-demo
       containers:
       - image: sabre1409/dsodemo
         name: dsodemo
