@@ -19,14 +19,15 @@ spec:
       labels:
         app: dso-demo
     spec:
+      automountServiceAccountToken: false
       containers:
       - image: sabre1409/dsodemo
         name: dsodemo
         ports:
         - containerPort: 8080
-        # securityContext:
-        #   seccompProfile:
-        #     type: RuntimeDefault
+        securityContext:
+          # seccompProfile:
+          #   type: RuntimeDefault
           capabilities:
           drop: 
             - ALL
@@ -34,7 +35,7 @@ spec:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
           runAsNonRoot: true
-          runAsUser: 1000
+          runAsUser: 11000
         resources:
          requests:
           cpu: "50m"
